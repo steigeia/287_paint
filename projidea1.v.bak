@@ -1,0 +1,157 @@
+module Snake(start, master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSync, VGA_vSync, blank_n);
+	input master_clk, KB_clk, data; //50MHz
+	output reg [7:0]VGA_R, VGA_G, VGA_B;  //Red, Green, Blue VGA signals
+	output VGA_hSync, VGA_vSync, DAC_clk, blank_n; //Horizontal and Vertical sync signals
+	wire [9:0] xCount; //x pixel
+	wire [9:0] yCount; //y pixel
+	reg pos [639:0][479:0];
+	wire displayArea; //is it in the active display area?
+	wire VGA_clk; //25 MHz
+	wire R;
+	wire G;
+	wire B;
+	clk_reduce reduce1(master_clk, VGA_clk); //Reduces 50MHz clock to 25MHz
+	VGA_gen gen1(VGA_clk, xCount, yCount, displayArea, VGA_hSync, VGA_vSync, blank_n);//Generates xCount, yCount and horizontal/vertical sync signals	
+	kbInput kbIn(KB_clk, data, direction, reset);
+	updateClk UPDATE(master_clk, update);
+	assign DAC_clk = VGA_clk;
+	
+	
+	
+	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+module kbInput(KB_clk, data, direction, reset);
+
+	input KB_clk, data;
+	output reg [4:0] direction;
+	output reg reset = 0; 
+	reg [7:0] code;
+	reg [10:0]keyCode, previousCode;
+	reg recordNext = 0;
+	integer count = 0;
+
+always@(negedge KB_clk)
+	begin
+		keyCode[count] = data;
+		count = count + 1;			
+		if(count == 11)
+		begin
+			if(previousCode == 8'hF0)
+			begin
+				code <= keyCode[8:1];
+			end
+			previousCode = keyCode[8:1];
+			count = 0;
+		end
+	end
+	
+	always@(*)
+	begin
+		if(code == 8'h1D)
+			direction = 5'b00010;
+		else if(code == 8'h1C)
+			direction = 5'b00100;
+		else if(code == 8'h1B)
+			direction = 5'b01000;
+		else if(code == 8'h23)
+			direction = 5'b10000;
+		else if(code == 8'h5A)
+			begin
+			reset <= ~reset;
+			direction = 5'b11111;
+			end
+		else direction <= direction;
+	end	
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module updateClk(master_clk, update);
+	input master_clk;
+	output reg update;
+	reg [21:0]count;	
+
+	always@(posedge master_clk)
+	begin
+		count <= count + 1;
+		if(count == 1777777)
+		begin
+			update <= ~update;
+			count <= 0;
+		end	
+	end
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module clk_reduce(master_clk, VGA_clk);
+
+	input master_clk; //50MHz clock
+	output reg VGA_clk; //25MHz clock
+	reg q;
+
+	always@(posedge master_clk)
+	begin
+		q <= ~q; 
+		VGA_clk <= q;
+	end
+endmodule
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module VGA_gen(VGA_clk, xCount, yCount, displayArea, VGA_hSync, VGA_vSync, blank_n);
+
+	input VGA_clk;
+	output reg [9:0]xCount, yCount; 
+	output reg displayArea;  
+	output VGA_hSync, VGA_vSync, blank_n;
+
+	reg p_hSync, p_vSync; 
+	
+	integer porchHF = 640; //start of horizntal front porch
+	integer syncH = 655;//start of horizontal sync
+	integer porchHB = 747; //start of horizontal back porch
+	integer maxH = 793; //total length of line.
+
+	integer porchVF = 480; //start of vertical front porch 
+	integer syncV = 490; //start of vertical sync
+	integer porchVB = 492; //start of vertical back porch
+	integer maxV = 525; //total rows. 
+
+	always@(posedge VGA_clk)
+	begin
+		if(xCount === maxH)
+			xCount <= 0;
+		else
+			xCount <= xCount + 1;
+	end
+	// 93sync, 46 bp, 640 display, 15 fp
+	// 2 sync, 33 bp, 480 display, 10 fp
+	always@(posedge VGA_clk)
+	begin
+		if(xCount === maxH)
+		begin
+			if(yCount === maxV)
+				yCount <= 0;
+			else
+			yCount <= yCount + 1;
+		end
+	end
+	
+	always@(posedge VGA_clk)
+	begin
+		displayArea <= ((xCount < porchHF) && (yCount < porchVF)); 
+	end
+
+	always@(posedge VGA_clk)
+	begin
+		p_hSync <= ((xCount >= syncH) && (xCount < porchHB)); 
+		p_vSync <= ((yCount >= syncV) && (yCount < porchVB)); 
+	end
+ 
+	assign VGA_vSync = ~p_vSync; 
+	assign VGA_hSync = ~p_hSync;
+	assign blank_n = displayArea;
+endmodule		
+////////////////////////////////////////////////////////////////////////////////////////////

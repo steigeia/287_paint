@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at projidea1.v(121): always construct contains both blocking and non-blocking assignments
+Warning (10273): Verilog HDL warning at projidea1.v(223): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at projidea1.v(224): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at projidea1.v(225): extended using "x" or "z"
