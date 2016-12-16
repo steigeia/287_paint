@@ -1,5 +1,5 @@
 Fitter report for projidea1
-Thu Dec 15 11:07:49 2016
+Fri Dec 16 09:32:43 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -41,8 +41,10 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
  33. I/O Rules Matrix
  34. Fitter Device Options
  35. Operating Settings and Conditions
- 36. Fitter Messages
- 37. Fitter Suppressed Messages
+ 36. Estimated Delay Added for Hold Timing Summary
+ 37. Estimated Delay Added for Hold Timing Details
+ 38. Fitter Messages
+ 39. Fitter Suppressed Messages
 
 
 
@@ -69,15 +71,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Dec 15 11:07:49 2016      ;
+; Fitter Status                      ; Successful - Fri Dec 16 09:32:43 2016      ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; projidea1                                  ;
 ; Top-level Entity Name              ; projidea1                                  ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 440 / 114,480 ( < 1 % )                    ;
-;     Total combinational functions  ; 431 / 114,480 ( < 1 % )                    ;
+; Total logic elements               ; 441 / 114,480 ( < 1 % )                    ;
+;     Total combinational functions  ; 432 / 114,480 ( < 1 % )                    ;
 ;     Dedicated logic registers      ; 166 / 114,480 ( < 1 % )                    ;
 ; Total registers                    ; 166                                        ;
 ; Total pins                         ; 60 / 529 ( 11 % )                          ;
@@ -147,15 +149,22 @@ agreement for further details.
 +----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.47        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;  15.8%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +------------------------------------------------------+
@@ -242,8 +251,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 733 ) ; 0.00 % ( 0 / 733 )         ; 0.00 % ( 0 / 733 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 733 ) ; 0.00 % ( 0 / 733 )         ; 0.00 % ( 0 / 733 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 734 ) ; 0.00 % ( 0 / 734 )         ; 0.00 % ( 0 / 734 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 734 ) ; 0.00 % ( 0 / 734 )         ; 0.00 % ( 0 / 734 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -266,7 +275,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 723 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 724 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -282,26 +291,26 @@ The pin-out file can be found in M:/ece287/projidea1/output_files/projidea1.pin.
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 440 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 274                     ;
+; Total logic elements                        ; 441 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 275                     ;
 ;     -- Register only                        ; 9                       ;
 ;     -- Combinational with a register        ; 157                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 202                     ;
-;     -- 3 input functions                    ; 50                      ;
-;     -- <=2 input functions                  ; 179                     ;
+;     -- 4 input functions                    ; 198                     ;
+;     -- 3 input functions                    ; 53                      ;
+;     -- <=2 input functions                  ; 181                     ;
 ;     -- Register only                        ; 9                       ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 326                     ;
+;     -- normal mode                          ; 327                     ;
 ;     -- arithmetic mode                      ; 105                     ;
 ;                                             ;                         ;
 ; Total registers*                            ; 166 / 117,053 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 166 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 31 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 35 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 60 / 529 ( 11 % )       ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -318,12 +327,12 @@ The pin-out file can be found in M:/ece287/projidea1/output_files/projidea1.pin.
 ; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.2% / 0.2% / 0.2%      ;
-; Peak interconnect usage (total/H/V)         ; 6.2% / 6.6% / 5.6%      ;
+; Average interconnect usage (total/H/V)      ; 0.3% / 0.2% / 0.3%      ;
+; Peak interconnect usage (total/H/V)         ; 6.8% / 6.6% / 7.1%      ;
 ; Maximum fan-out                             ; 166                     ;
 ; Highest non-global fan-out                  ; 166                     ;
-; Total fan-out                               ; 2141                    ;
-; Average fan-out                             ; 2.89                    ;
+; Total fan-out                               ; 2138                    ;
+; Average fan-out                             ; 2.88                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -336,26 +345,26 @@ The pin-out file can be found in M:/ece287/projidea1/output_files/projidea1.pin.
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 440 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 274                    ; 0                              ;
+; Total logic elements                        ; 441 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 275                    ; 0                              ;
 ;     -- Register only                        ; 9                      ; 0                              ;
 ;     -- Combinational with a register        ; 157                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 202                    ; 0                              ;
-;     -- 3 input functions                    ; 50                     ; 0                              ;
-;     -- <=2 input functions                  ; 179                    ; 0                              ;
+;     -- 4 input functions                    ; 198                    ; 0                              ;
+;     -- 3 input functions                    ; 53                     ; 0                              ;
+;     -- <=2 input functions                  ; 181                    ; 0                              ;
 ;     -- Register only                        ; 9                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 326                    ; 0                              ;
+;     -- normal mode                          ; 327                    ; 0                              ;
 ;     -- arithmetic mode                      ; 105                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Total registers                             ; 166                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 166 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 31 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 35 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 60                     ; 0                              ;
@@ -371,8 +380,8 @@ The pin-out file can be found in M:/ece287/projidea1/output_files/projidea1.pin.
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 2136                   ; 5                              ;
-;     -- Registered Connections               ; 717                    ; 0                              ;
+;     -- Total Connections                    ; 2133                   ; 5                              ;
+;     -- Registered Connections               ; 712                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 6                      ; 0                              ;
@@ -477,9 +486,9 @@ The pin-out file can be found in M:/ece287/projidea1/output_files/projidea1.pin.
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+----------------------+-------------------------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination                ; Termination Control Block ; Location assigned by ; Output Enable Source ; Output Enable Group     ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+----------------------+-------------------------+
-; sram_data[0] ; AH3   ; 3        ; 5            ; 0            ; 7            ; 2                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
-; sram_data[1] ; AF4   ; 3        ; 1            ; 0            ; 0            ; 2                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
-; sram_data[2] ; AG4   ; 3        ; 9            ; 0            ; 21           ; 2                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
+; sram_data[0] ; AH3   ; 3        ; 5            ; 0            ; 7            ; 3                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
+; sram_data[1] ; AF4   ; 3        ; 1            ; 0            ; 0            ; 3                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
+; sram_data[2] ; AG4   ; 3        ; 9            ; 0            ; 21           ; 3                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; User                 ; 0 pF                 ; sram_addr~20 (inverted) ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+----------------------+-------------------------+
 
 
@@ -1325,10 +1334,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name           ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------+--------------+
-; |projidea1                 ; 440 (342)   ; 166 (102)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 60   ; 0            ; 274 (241)    ; 9 (8)             ; 157 (96)         ; |projidea1                    ; work         ;
-;    |VGA_gen:gen1|          ; 47 (47)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 21 (21)          ; |projidea1|VGA_gen:gen1       ; work         ;
+; |projidea1                 ; 441 (343)   ; 166 (102)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 60   ; 0            ; 275 (240)    ; 9 (7)             ; 157 (98)         ; |projidea1                    ; work         ;
+;    |VGA_gen:gen1|          ; 46 (46)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 20 (20)          ; |projidea1|VGA_gen:gen1       ; work         ;
 ;    |clk_reduce:reduce1|    ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; |projidea1|clk_reduce:reduce1 ; work         ;
-;    |keyboard:kbIn|         ; 49 (49)     ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 42 (42)          ; |projidea1|keyboard:kbIn      ; work         ;
+;    |keyboard:kbIn|         ; 51 (51)     ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 41 (41)          ; |projidea1|keyboard:kbIn      ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1391,12 +1400,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sram_we       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; sram_lb       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; sram_ub       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; sram_data[0]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; sram_data[0]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; sram_data[1]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; sram_data[2]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; master_clk    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; rst           ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; KB_clk        ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; rst           ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; KB_clk        ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; data          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +---------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -1407,223 +1416,226 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                 ; Pad To Core Index ; Setting ;
 +-------------------------------------+-------------------+---------+
 ; sram_data[0]                        ;                   ;         ;
-;      - VGA_R~0                      ; 0                 ; 6       ;
-;      - VGA_R~1                      ; 0                 ; 6       ;
+;      - VGA_R~2                      ; 1                 ; 6       ;
+;      - VGA_R~3                      ; 1                 ; 6       ;
+;      - VGA_R~4                      ; 1                 ; 6       ;
 ; sram_data[1]                        ;                   ;         ;
-;      - VGA_G~0                      ; 0                 ; 6       ;
-;      - VGA_G~1                      ; 0                 ; 6       ;
+;      - VGA_G~3                      ; 0                 ; 6       ;
+;      - VGA_G~4                      ; 0                 ; 6       ;
+;      - VGA_G~5                      ; 0                 ; 6       ;
 ; sram_data[2]                        ;                   ;         ;
-;      - VGA_B~5                      ; 1                 ; 6       ;
-;      - VGA_B~6                      ; 1                 ; 6       ;
+;      - VGA_B~0                      ; 1                 ; 6       ;
+;      - VGA_B~1                      ; 1                 ; 6       ;
+;      - VGA_B~2                      ; 1                 ; 6       ;
 ; master_clk                          ;                   ;         ;
 ; rst                                 ;                   ;         ;
-;      - backgroundB[0]               ; 0                 ; 6       ;
-;      - backgroundG[0]               ; 0                 ; 6       ;
-;      - backgroundR[0]               ; 0                 ; 6       ;
-;      - keycode[0]                   ; 0                 ; 6       ;
-;      - keycode[1]                   ; 0                 ; 6       ;
-;      - keycode[2]                   ; 0                 ; 6       ;
-;      - keycode[3]                   ; 0                 ; 6       ;
-;      - keycode[4]                   ; 0                 ; 6       ;
-;      - keycode[5]                   ; 0                 ; 6       ;
-;      - keycode[6]                   ; 0                 ; 6       ;
-;      - keycode[7]                   ; 0                 ; 6       ;
-;      - clk_reduce:reduce1|VGA_clk   ; 0                 ; 6       ;
-;      - clk_reduce:reduce1|q         ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[0]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[1]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[2]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[3]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[4]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[5]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[6]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[7]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[8]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|yCount[9]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[0]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[1]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[2]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[3]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[4]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[5]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[6]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[7]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[8]       ; 0                 ; 6       ;
-;      - VGA_gen:gen1|xCount[9]       ; 0                 ; 6       ;
-;      - blink[0]                     ; 0                 ; 6       ;
-;      - blink[1]                     ; 0                 ; 6       ;
-;      - blink[2]                     ; 0                 ; 6       ;
-;      - blink[3]                     ; 0                 ; 6       ;
-;      - blink[4]                     ; 0                 ; 6       ;
-;      - blink[5]                     ; 0                 ; 6       ;
-;      - counter[4]                   ; 0                 ; 6       ;
-;      - counter[5]                   ; 0                 ; 6       ;
-;      - counter[6]                   ; 0                 ; 6       ;
-;      - counter[7]                   ; 0                 ; 6       ;
-;      - counter[8]                   ; 0                 ; 6       ;
-;      - counter[9]                   ; 0                 ; 6       ;
-;      - counter[10]                  ; 0                 ; 6       ;
-;      - counter[11]                  ; 0                 ; 6       ;
-;      - counter[12]                  ; 0                 ; 6       ;
-;      - counter[13]                  ; 0                 ; 6       ;
-;      - counter[14]                  ; 0                 ; 6       ;
-;      - counter[15]                  ; 0                 ; 6       ;
-;      - counter[16]                  ; 0                 ; 6       ;
-;      - counter[17]                  ; 0                 ; 6       ;
-;      - counter[18]                  ; 0                 ; 6       ;
-;      - counter[19]                  ; 0                 ; 6       ;
-;      - counter[20]                  ; 0                 ; 6       ;
-;      - counter[21]                  ; 0                 ; 6       ;
-;      - counter[22]                  ; 0                 ; 6       ;
-;      - counter[23]                  ; 0                 ; 6       ;
-;      - counter[24]                  ; 0                 ; 6       ;
-;      - counter[25]                  ; 0                 ; 6       ;
-;      - counter[26]                  ; 0                 ; 6       ;
-;      - counter[27]                  ; 0                 ; 6       ;
-;      - counter[28]                  ; 0                 ; 6       ;
-;      - counter[29]                  ; 0                 ; 6       ;
-;      - counter[30]                  ; 0                 ; 6       ;
-;      - counter[31]                  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[0]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[1]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[2]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[3]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[4]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[5]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[6]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[7]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[8]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[9]   ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[10]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[11]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[12]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[13]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[14]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxtimeout[15]  ; 0                 ; 6       ;
-;      - counter[3]                   ; 0                 ; 6       ;
-;      - counter[2]                   ; 0                 ; 6       ;
-;      - counter[1]                   ; 0                 ; 6       ;
-;      - counter[0]                   ; 0                 ; 6       ;
-;      - writex[0]                    ; 0                 ; 6       ;
-;      - writex[1]                    ; 0                 ; 6       ;
-;      - writex[2]                    ; 0                 ; 6       ;
-;      - writex[3]                    ; 0                 ; 6       ;
-;      - writex[4]                    ; 0                 ; 6       ;
-;      - writex[5]                    ; 0                 ; 6       ;
-;      - writex[6]                    ; 0                 ; 6       ;
-;      - writex[7]                    ; 0                 ; 6       ;
-;      - writex[8]                    ; 0                 ; 6       ;
-;      - writex[9]                    ; 0                 ; 6       ;
-;      - writey[0]                    ; 0                 ; 6       ;
-;      - writey[1]                    ; 0                 ; 6       ;
-;      - writey[2]                    ; 0                 ; 6       ;
-;      - writey[3]                    ; 0                 ; 6       ;
-;      - writey[4]                    ; 0                 ; 6       ;
-;      - writey[5]                    ; 0                 ; 6       ;
-;      - writey[6]                    ; 0                 ; 6       ;
-;      - writey[7]                    ; 0                 ; 6       ;
-;      - writey[8]                    ; 0                 ; 6       ;
-;      - writey[9]                    ; 0                 ; 6       ;
-;      - write_wait                   ; 0                 ; 6       ;
-;      - resetram                     ; 0                 ; 6       ;
-;      - writeR[0]                    ; 0                 ; 6       ;
-;      - writeG[0]                    ; 0                 ; 6       ;
-;      - writeB[0]                    ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[3]      ; 0                 ; 6       ;
-;      - previous_keycode[7]          ; 0                 ; 6       ;
-;      - previous_keycode[6]          ; 0                 ; 6       ;
-;      - previous_keycode[5]          ; 0                 ; 6       ;
-;      - previous_keycode[4]          ; 0                 ; 6       ;
-;      - previous_keycode[3]          ; 0                 ; 6       ;
-;      - previous_keycode[2]          ; 0                 ; 6       ;
-;      - previous_keycode[1]          ; 0                 ; 6       ;
-;      - previous_keycode[0]          ; 0                 ; 6       ;
-;      - keyboard:kbIn|datafetched    ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[5]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[7]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[6]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[2]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[0]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[4]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxdata[1]      ; 0                 ; 6       ;
-;      - prev_writex[0]               ; 0                 ; 6       ;
-;      - prev_writex[1]               ; 0                 ; 6       ;
-;      - prev_writex[2]               ; 0                 ; 6       ;
-;      - prev_writex[3]               ; 0                 ; 6       ;
-;      - prev_writex[4]               ; 0                 ; 6       ;
-;      - prev_writex[5]               ; 0                 ; 6       ;
-;      - prev_writex[6]               ; 0                 ; 6       ;
-;      - prev_writex[7]               ; 0                 ; 6       ;
-;      - prev_writex[8]               ; 0                 ; 6       ;
-;      - prev_writex[9]               ; 0                 ; 6       ;
-;      - prev_writey[0]               ; 0                 ; 6       ;
-;      - prev_writey[1]               ; 0                 ; 6       ;
-;      - prev_writey[2]               ; 0                 ; 6       ;
-;      - prev_writey[3]               ; 0                 ; 6       ;
-;      - prev_writey[4]               ; 0                 ; 6       ;
-;      - prev_writey[5]               ; 0                 ; 6       ;
-;      - prev_writey[6]               ; 0                 ; 6       ;
-;      - prev_writey[7]               ; 0                 ; 6       ;
-;      - prev_writey[8]               ; 0                 ; 6       ;
-;      - prev_writey[9]               ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[4]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[0]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|state.receive  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[6]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[8]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[7]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[3]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[1]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[5]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[2]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|state.idle     ; 0                 ; 6       ;
-;      - keyboard:kbIn|clksr[1]       ; 0                 ; 6       ;
-;      - keyboard:kbIn|clksr[0]       ; 0                 ; 6       ;
-;      - keyboard:kbIn|datasr[1]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[9]  ; 0                 ; 6       ;
-;      - keyboard:kbIn|datasr[0]      ; 0                 ; 6       ;
-;      - keyboard:kbIn|rxregister[10] ; 0                 ; 6       ;
+;      - backgroundB[0]               ; 1                 ; 6       ;
+;      - backgroundG[0]               ; 1                 ; 6       ;
+;      - backgroundR[0]               ; 1                 ; 6       ;
+;      - keycode[0]                   ; 1                 ; 6       ;
+;      - keycode[1]                   ; 1                 ; 6       ;
+;      - keycode[2]                   ; 1                 ; 6       ;
+;      - keycode[3]                   ; 1                 ; 6       ;
+;      - keycode[4]                   ; 1                 ; 6       ;
+;      - keycode[5]                   ; 1                 ; 6       ;
+;      - keycode[6]                   ; 1                 ; 6       ;
+;      - keycode[7]                   ; 1                 ; 6       ;
+;      - clk_reduce:reduce1|VGA_clk   ; 1                 ; 6       ;
+;      - clk_reduce:reduce1|q         ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[0]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[1]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[2]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[3]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[4]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[5]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[6]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[7]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[8]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|yCount[9]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[0]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[1]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[2]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[3]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[4]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[5]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[6]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[7]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[8]       ; 1                 ; 6       ;
+;      - VGA_gen:gen1|xCount[9]       ; 1                 ; 6       ;
+;      - blink[0]                     ; 1                 ; 6       ;
+;      - blink[1]                     ; 1                 ; 6       ;
+;      - blink[2]                     ; 1                 ; 6       ;
+;      - blink[3]                     ; 1                 ; 6       ;
+;      - blink[4]                     ; 1                 ; 6       ;
+;      - blink[5]                     ; 1                 ; 6       ;
+;      - counter[4]                   ; 1                 ; 6       ;
+;      - counter[5]                   ; 1                 ; 6       ;
+;      - counter[6]                   ; 1                 ; 6       ;
+;      - counter[7]                   ; 1                 ; 6       ;
+;      - counter[8]                   ; 1                 ; 6       ;
+;      - counter[9]                   ; 1                 ; 6       ;
+;      - counter[10]                  ; 1                 ; 6       ;
+;      - counter[11]                  ; 1                 ; 6       ;
+;      - counter[12]                  ; 1                 ; 6       ;
+;      - counter[13]                  ; 1                 ; 6       ;
+;      - counter[14]                  ; 1                 ; 6       ;
+;      - counter[15]                  ; 1                 ; 6       ;
+;      - counter[16]                  ; 1                 ; 6       ;
+;      - counter[17]                  ; 1                 ; 6       ;
+;      - counter[18]                  ; 1                 ; 6       ;
+;      - counter[19]                  ; 1                 ; 6       ;
+;      - counter[20]                  ; 1                 ; 6       ;
+;      - counter[21]                  ; 1                 ; 6       ;
+;      - counter[22]                  ; 1                 ; 6       ;
+;      - counter[23]                  ; 1                 ; 6       ;
+;      - counter[24]                  ; 1                 ; 6       ;
+;      - counter[25]                  ; 1                 ; 6       ;
+;      - counter[26]                  ; 1                 ; 6       ;
+;      - counter[27]                  ; 1                 ; 6       ;
+;      - counter[28]                  ; 1                 ; 6       ;
+;      - counter[29]                  ; 1                 ; 6       ;
+;      - counter[30]                  ; 1                 ; 6       ;
+;      - counter[31]                  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[0]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[1]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[2]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[3]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[4]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[5]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[6]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[7]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[8]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[9]   ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[10]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[11]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[12]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[13]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[14]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxtimeout[15]  ; 1                 ; 6       ;
+;      - counter[3]                   ; 1                 ; 6       ;
+;      - counter[2]                   ; 1                 ; 6       ;
+;      - counter[1]                   ; 1                 ; 6       ;
+;      - counter[0]                   ; 1                 ; 6       ;
+;      - writex[0]                    ; 1                 ; 6       ;
+;      - writex[1]                    ; 1                 ; 6       ;
+;      - writex[2]                    ; 1                 ; 6       ;
+;      - writex[3]                    ; 1                 ; 6       ;
+;      - writex[4]                    ; 1                 ; 6       ;
+;      - writex[5]                    ; 1                 ; 6       ;
+;      - writex[6]                    ; 1                 ; 6       ;
+;      - writex[7]                    ; 1                 ; 6       ;
+;      - writex[8]                    ; 1                 ; 6       ;
+;      - writex[9]                    ; 1                 ; 6       ;
+;      - writey[0]                    ; 1                 ; 6       ;
+;      - writey[1]                    ; 1                 ; 6       ;
+;      - writey[2]                    ; 1                 ; 6       ;
+;      - writey[3]                    ; 1                 ; 6       ;
+;      - writey[4]                    ; 1                 ; 6       ;
+;      - writey[5]                    ; 1                 ; 6       ;
+;      - writey[6]                    ; 1                 ; 6       ;
+;      - writey[7]                    ; 1                 ; 6       ;
+;      - writey[8]                    ; 1                 ; 6       ;
+;      - writey[9]                    ; 1                 ; 6       ;
+;      - write_wait                   ; 1                 ; 6       ;
+;      - writeR[0]                    ; 1                 ; 6       ;
+;      - writeG[0]                    ; 1                 ; 6       ;
+;      - writeB[0]                    ; 1                 ; 6       ;
+;      - resetram                     ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[3]      ; 1                 ; 6       ;
+;      - previous_keycode[7]          ; 1                 ; 6       ;
+;      - previous_keycode[6]          ; 1                 ; 6       ;
+;      - previous_keycode[5]          ; 1                 ; 6       ;
+;      - previous_keycode[4]          ; 1                 ; 6       ;
+;      - previous_keycode[3]          ; 1                 ; 6       ;
+;      - previous_keycode[2]          ; 1                 ; 6       ;
+;      - previous_keycode[1]          ; 1                 ; 6       ;
+;      - previous_keycode[0]          ; 1                 ; 6       ;
+;      - keyboard:kbIn|datafetched    ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[5]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[7]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[6]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[2]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[0]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[4]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxdata[1]      ; 1                 ; 6       ;
+;      - prev_writex[0]               ; 1                 ; 6       ;
+;      - prev_writex[1]               ; 1                 ; 6       ;
+;      - prev_writex[2]               ; 1                 ; 6       ;
+;      - prev_writex[3]               ; 1                 ; 6       ;
+;      - prev_writex[4]               ; 1                 ; 6       ;
+;      - prev_writex[5]               ; 1                 ; 6       ;
+;      - prev_writex[6]               ; 1                 ; 6       ;
+;      - prev_writex[7]               ; 1                 ; 6       ;
+;      - prev_writex[8]               ; 1                 ; 6       ;
+;      - prev_writex[9]               ; 1                 ; 6       ;
+;      - prev_writey[0]               ; 1                 ; 6       ;
+;      - prev_writey[1]               ; 1                 ; 6       ;
+;      - prev_writey[2]               ; 1                 ; 6       ;
+;      - prev_writey[3]               ; 1                 ; 6       ;
+;      - prev_writey[4]               ; 1                 ; 6       ;
+;      - prev_writey[5]               ; 1                 ; 6       ;
+;      - prev_writey[6]               ; 1                 ; 6       ;
+;      - prev_writey[7]               ; 1                 ; 6       ;
+;      - prev_writey[8]               ; 1                 ; 6       ;
+;      - prev_writey[9]               ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[4]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[0]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|state.receive  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[6]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[8]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[7]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[3]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[1]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[5]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[2]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|state.idle     ; 1                 ; 6       ;
+;      - keyboard:kbIn|clksr[1]       ; 1                 ; 6       ;
+;      - keyboard:kbIn|clksr[0]       ; 1                 ; 6       ;
+;      - keyboard:kbIn|datasr[1]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[9]  ; 1                 ; 6       ;
+;      - keyboard:kbIn|datasr[0]      ; 1                 ; 6       ;
+;      - keyboard:kbIn|rxregister[10] ; 1                 ; 6       ;
 ; KB_clk                              ;                   ;         ;
-;      - keyboard:kbIn|clksr[0]~0     ; 1                 ; 6       ;
+;      - keyboard:kbIn|clksr[0]~0     ; 0                 ; 6       ;
 ; data                                ;                   ;         ;
 ;      - keyboard:kbIn|datasr[0]~0    ; 1                 ; 6       ;
 +-------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                             ;
-+-------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Name                          ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; VGA_gen:gen1|Equal0~2         ; LCCOMB_X28_Y19_N2  ; 15      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; WideOr0~4                     ; LCCOMB_X26_Y20_N4  ; 6       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; backgroundR[0]~0              ; LCCOMB_X26_Y20_N8  ; 24      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; blink[2]~21                   ; LCCOMB_X26_Y20_N30 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; clk_reduce:reduce1|VGA_clk    ; FF_X28_Y20_N29     ; 103     ; Clock         ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; counter[27]~88                ; LCCOMB_X26_Y19_N30 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; keyboard:kbIn|datafetched     ; FF_X28_Y24_N23     ; 12      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; keyboard:kbIn|rxdata[7]~0     ; LCCOMB_X29_Y24_N30 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; keyboard:kbIn|rxregister[4]~1 ; LCCOMB_X32_Y24_N0  ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; keyboard:kbIn|state.idle      ; FF_X29_Y24_N25     ; 30      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; keycode[0]~0                  ; LCCOMB_X28_Y24_N6  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; master_clk                    ; PIN_Y2             ; 63      ; Clock         ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; resetram                      ; FF_X27_Y20_N1      ; 56      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
-; rst                           ; PIN_Y23            ; 166     ; Async. clear  ; no     ; --                   ; --               ; --                        ;
-; sram_addr~20                  ; LCCOMB_X24_Y20_N4  ; 4       ; Output enable ; no     ; --                   ; --               ; --                        ;
-; write_wait                    ; FF_X26_Y19_N5      ; 39      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; writex~31                     ; LCCOMB_X28_Y20_N10 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; writey~31                     ; LCCOMB_X26_Y20_N0  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-+-------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                              ;
++--------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; Name                           ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; VGA_gen:gen1|Equal0~2          ; LCCOMB_X39_Y40_N4  ; 15      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WideOr0~4                      ; LCCOMB_X35_Y41_N28 ; 6       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; backgroundR[0]~0               ; LCCOMB_X39_Y41_N22 ; 23      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; blink[2]~20                    ; LCCOMB_X35_Y41_N26 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; clk_reduce:reduce1|VGA_clk     ; FF_X36_Y42_N5      ; 103     ; Clock         ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; counter[13]~88                 ; LCCOMB_X39_Y41_N6  ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; keyboard:kbIn|datafetched      ; FF_X39_Y43_N17     ; 12      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; keyboard:kbIn|rxdata[7]~0      ; LCCOMB_X34_Y43_N0  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; keyboard:kbIn|rxregister[10]~1 ; LCCOMB_X33_Y43_N28 ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; keyboard:kbIn|state.idle       ; FF_X34_Y43_N31     ; 30      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; keycode[0]~0                   ; LCCOMB_X41_Y43_N14 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; master_clk                     ; PIN_Y2             ; 63      ; Clock         ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; resetram                       ; FF_X39_Y41_N15     ; 52      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; rst                            ; PIN_Y23            ; 166     ; Async. clear  ; no     ; --                   ; --               ; --                        ;
+; sram_addr~20                   ; LCCOMB_X36_Y42_N18 ; 4       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; write_wait                     ; FF_X39_Y41_N13     ; 38      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; writex~31                      ; LCCOMB_X39_Y41_N30 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; writey~30                      ; LCCOMB_X38_Y41_N6  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
++--------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                        ;
-+----------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                       ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk_reduce:reduce1|VGA_clk ; FF_X28_Y20_N29 ; 103     ; 4                                    ; Global Clock         ; GCLK1            ; --                        ;
-; master_clk                 ; PIN_Y2         ; 63      ; 2                                    ; Global Clock         ; GCLK4            ; --                        ;
-+----------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                       ;
++----------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                       ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk_reduce:reduce1|VGA_clk ; FF_X36_Y42_N5 ; 103     ; 1                                    ; Global Clock         ; GCLK13           ; --                        ;
+; master_clk                 ; PIN_Y2        ; 63      ; 5                                    ; Global Clock         ; GCLK4            ; --                        ;
++----------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------+
@@ -1632,40 +1644,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                           ; Fan-Out ;
 +--------------------------------+---------+
 ; rst~input                      ; 166     ;
-; resetram                       ; 56      ;
-; write_wait                     ; 39      ;
-; counter[27]~88                 ; 32      ;
+; resetram                       ; 52      ;
+; write_wait                     ; 38      ;
+; counter[13]~88                 ; 32      ;
 ; keyboard:kbIn|state.idle       ; 30      ;
-; always3~12                     ; 25      ;
-; backgroundR[0]~0               ; 24      ;
-; always2~22                     ; 22      ;
-; writey[5]                      ; 21      ;
-; writey[9]                      ; 20      ;
+; always3~12                     ; 26      ;
+; backgroundR[0]~0               ; 23      ;
+; always2~21                     ; 22      ;
+; writey[5]                      ; 22      ;
+; writey[9]                      ; 21      ;
 ; VGA_gen:gen1|Equal0~2          ; 15      ;
 ; always2~2                      ; 14      ;
 ; always2~5                      ; 13      ;
-; always2~21                     ; 12      ;
+; LessThan6~0                    ; 13      ;
+; always2~22                     ; 12      ;
+; LessThan0~0                    ; 12      ;
 ; keyboard:kbIn|datafetched      ; 12      ;
-; LessThan6~0                    ; 12      ;
-; keyboard:kbIn|rxregister[4]~1  ; 11      ;
-; LessThan0~0                    ; 11      ;
-; LessThan1~0                    ; 11      ;
-; writex[9]                      ; 11      ;
-; writey~31                      ; 10      ;
+; keyboard:kbIn|rxregister[10]~1 ; 11      ;
+; writey~30                      ; 10      ;
 ; writey~28                      ; 10      ;
 ; writey~25                      ; 10      ;
 ; writey~23                      ; 10      ;
 ; writey~20                      ; 10      ;
+; LessThan1~0                    ; 10      ;
 ; writex~31                      ; 10      ;
 ; writex~28                      ; 10      ;
 ; writex~25                      ; 10      ;
 ; writex~23                      ; 10      ;
 ; writex~22                      ; 10      ;
-; VGA_B~4                        ; 10      ;
 ; keycode[1]                     ; 10      ;
-; writex[8]                      ; 10      ;
-; writex[7]                      ; 10      ;
+; writex[9]                      ; 10      ;
 ; writey~26                      ; 9       ;
+; VGA_G~2                        ; 9       ;
 ; keycode[0]                     ; 9       ;
 ; writey[8]                      ; 9       ;
 ; writey[7]                      ; 9       ;
@@ -1675,10 +1685,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; writey[2]                      ; 9       ;
 ; writey[1]                      ; 9       ;
 ; writey[0]                      ; 9       ;
+; writex[8]                      ; 9       ;
+; writex[7]                      ; 9       ;
 ; keyboard:kbIn|rxdata[7]~0      ; 8       ;
 ; keycode[0]~0                   ; 8       ;
-; keycode[6]                     ; 8       ;
-; keycode[7]                     ; 8       ;
 ; keycode[3]                     ; 8       ;
 ; writex[6]                      ; 8       ;
 ; writex[5]                      ; 8       ;
@@ -1686,28 +1696,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; writex[3]                      ; 8       ;
 ; writex[2]                      ; 8       ;
 ; writex[1]                      ; 8       ;
-; VGA_B~5                        ; 7       ;
-; VGA_G~0                        ; 7       ;
-; VGA_R~0                        ; 7       ;
-; VGA_B~1                        ; 7       ;
-; blink[2]~21                    ; 6       ;
+; blink[2]~20                    ; 6       ;
 ; WideOr0~4                      ; 6       ;
-; always2~8                      ; 6       ;
+; always2~9                      ; 6       ;
+; VGA_B~1                        ; 6       ;
+; VGA_G~4                        ; 6       ;
+; VGA_R~3                        ; 6       ;
+; WideOr0~3                      ; 6       ;
+; keycode[6]                     ; 6       ;
+; keycode[7]                     ; 6       ;
 ; keycode[2]                     ; 6       ;
+; keycode[5]                     ; 6       ;
+; keycode[4]                     ; 6       ;
 ; VGA_gen:gen1|yCount[9]         ; 6       ;
 ; VGA_gen:gen1|xCount[9]         ; 6       ;
 ; VGA_gen:gen1|xCount[8]         ; 6       ;
 ; VGA_gen:gen1|xCount[7]         ; 6       ;
 ; VGA_gen:gen1|xCount[6]         ; 6       ;
+; VGA_R~1                        ; 6       ;
 ; writex[0]                      ; 6       ;
 ; always2~19                     ; 5       ;
 ; always2~17                     ; 5       ;
-; always2~6                      ; 5       ;
-; always2~4                      ; 5       ;
+; always2~7                      ; 5       ;
 ; keyboard:kbIn|rxdata[1]        ; 5       ;
 ; keyboard:kbIn|rxdata[2]        ; 5       ;
-; keycode[5]                     ; 5       ;
-; keycode[4]                     ; 5       ;
+; Decoder1~1                     ; 5       ;
+; WideOr0~2                      ; 5       ;
 ; VGA_gen:gen1|yCount[8]         ; 5       ;
 ; VGA_gen:gen1|yCount[7]         ; 5       ;
 ; VGA_gen:gen1|yCount[6]         ; 5       ;
@@ -1726,28 +1740,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; keyboard:kbIn|state.receive    ; 4       ;
 ; VGA_gen:gen1|Equal1~2          ; 4       ;
 ; always2~14                     ; 4       ;
+; always2~4                      ; 4       ;
 ; LessThan5~2                    ; 4       ;
 ; keyboard:kbIn|rxdata[4]        ; 4       ;
 ; keyboard:kbIn|rxdata[0]        ; 4       ;
 ; keyboard:kbIn|rxdata[3]        ; 4       ;
-; Decoder1~1                     ; 4       ;
-; Decoder1~0                     ; 4       ;
 ; sram_addr~20                   ; 4       ;
-; WideOr0~2                      ; 4       ;
 ; VGA_gen:gen1|yCount[0]         ; 4       ;
 ; writeB[0]                      ; 4       ;
 ; writeG[0]                      ; 4       ;
 ; writeR[0]                      ; 4       ;
+; sram_data[2]~input             ; 3       ;
+; sram_data[1]~input             ; 3       ;
+; sram_data[0]~input             ; 3       ;
 ; keyboard:kbIn|datasr[1]        ; 3       ;
 ; keyboard:kbIn|clksr[1]         ; 3       ;
 ; keyboard:kbIn|rxregister[0]    ; 3       ;
-; Rout[0]~0                      ; 3       ;
+; writex~30                      ; 3       ;
 ; always2~10                     ; 3       ;
 ; keyboard:kbIn|rxdata[6]        ; 3       ;
 ; keyboard:kbIn|rxdata[7]        ; 3       ;
 ; keyboard:kbIn|rxdata[5]        ; 3       ;
-; always2~0                      ; 3       ;
-; WideOr0~3                      ; 3       ;
+; Decoder1~0                     ; 3       ;
+; backgroundB[0]                 ; 3       ;
+; backgroundG[0]                 ; 3       ;
+; backgroundR[0]                 ; 3       ;
 ; Add4~18                        ; 3       ;
 ; Add4~16                        ; 3       ;
 ; Add4~14                        ; 3       ;
@@ -1768,9 +1785,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add3~4                         ; 3       ;
 ; Add3~2                         ; 3       ;
 ; Add3~0                         ; 3       ;
-; sram_data[2]~input             ; 2       ;
-; sram_data[1]~input             ; 2       ;
-; sram_data[0]~input             ; 2       ;
 ; keyboard:kbIn|clksr[0]         ; 2       ;
 ; keyboard:kbIn|rxregister[2]    ; 2       ;
 ; keyboard:kbIn|rxregister[5]    ; 2       ;
@@ -1782,19 +1796,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; keyboard:kbIn|rxregister[4]    ; 2       ;
 ; always2~20                     ; 2       ;
 ; always2~15                     ; 2       ;
-; always2~7                      ; 2       ;
+; always2~6                      ; 2       ;
 ; always2~3                      ; 2       ;
 ; LessThan4~1                    ; 2       ;
 ; LessThan4~0                    ; 2       ;
+; always2~1                      ; 2       ;
 ; Decoder0~3                     ; 2       ;
 ; Decoder0~1                     ; 2       ;
 ; Equal0~1                       ; 2       ;
 ; Equal0~0                       ; 2       ;
 ; clk_reduce:reduce1|q           ; 2       ;
 ; VGA_gen:gen1|LessThan1~0       ; 2       ;
-; backgroundB[0]                 ; 2       ;
-; backgroundG[0]                 ; 2       ;
-; backgroundR[0]                 ; 2       ;
 ; keyboard:kbIn|rxtimeout[13]    ; 2       ;
 ; keyboard:kbIn|rxtimeout[12]    ; 2       ;
 ; keyboard:kbIn|rxtimeout[15]    ; 2       ;
@@ -1923,69 +1935,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LessThan2~0                    ; 1       ;
 ; write_wait~2                   ; 1       ;
 ; write_wait~1                   ; 1       ;
-; Rout[0]~1                      ; 1       ;
-; writey~75                      ; 1       ;
+; Rout[0]~0                      ; 1       ;
+; resetram~1                     ; 1       ;
+; resetram~0                     ; 1       ;
 ; writey~74                      ; 1       ;
-; writex~77                      ; 1       ;
 ; writey~73                      ; 1       ;
+; writex~77                      ; 1       ;
 ; writey~72                      ; 1       ;
+; writey~71                      ; 1       ;
 ; prev_writey[9]                 ; 1       ;
 ; VGA_gen:gen1|yCount~3          ; 1       ;
-; writey~71                      ; 1       ;
 ; writey~70                      ; 1       ;
 ; writey~69                      ; 1       ;
 ; writey~68                      ; 1       ;
 ; writey~67                      ; 1       ;
-; prev_writey[8]                 ; 1       ;
 ; writey~66                      ; 1       ;
+; prev_writey[8]                 ; 1       ;
 ; writey~65                      ; 1       ;
 ; writey~64                      ; 1       ;
 ; writey~63                      ; 1       ;
 ; writey~62                      ; 1       ;
-; prev_writey[7]                 ; 1       ;
 ; writey~61                      ; 1       ;
+; prev_writey[7]                 ; 1       ;
 ; writey~60                      ; 1       ;
 ; writey~59                      ; 1       ;
 ; writey~58                      ; 1       ;
 ; writey~57                      ; 1       ;
-; prev_writey[6]                 ; 1       ;
 ; writey~56                      ; 1       ;
+; prev_writey[6]                 ; 1       ;
 ; writey~55                      ; 1       ;
 ; writey~54                      ; 1       ;
 ; writey~53                      ; 1       ;
 ; writey~52                      ; 1       ;
-; prev_writey[5]                 ; 1       ;
 ; writey~51                      ; 1       ;
+; prev_writey[5]                 ; 1       ;
 ; writey~50                      ; 1       ;
 ; writey~49                      ; 1       ;
 ; writey~48                      ; 1       ;
 ; writey~47                      ; 1       ;
-; prev_writey[4]                 ; 1       ;
 ; writey~46                      ; 1       ;
+; prev_writey[4]                 ; 1       ;
 ; writey~45                      ; 1       ;
 ; writey~44                      ; 1       ;
 ; writey~43                      ; 1       ;
 ; writey~42                      ; 1       ;
+; writey~41                      ; 1       ;
 ; prev_writey[3]                 ; 1       ;
 ; VGA_gen:gen1|yCount~2          ; 1       ;
-; writey~41                      ; 1       ;
 ; writey~40                      ; 1       ;
 ; writey~39                      ; 1       ;
 ; writey~38                      ; 1       ;
 ; writey~37                      ; 1       ;
+; writey~36                      ; 1       ;
 ; prev_writey[2]                 ; 1       ;
 ; VGA_gen:gen1|yCount~1          ; 1       ;
-; writey~36                      ; 1       ;
 ; writey~35                      ; 1       ;
 ; writey~34                      ; 1       ;
 ; writey~33                      ; 1       ;
 ; writey~32                      ; 1       ;
+; writey~31                      ; 1       ;
 ; prev_writey[1]                 ; 1       ;
 ; VGA_gen:gen1|yCount~0          ; 1       ;
 ; VGA_gen:gen1|Equal1~1          ; 1       ;
 ; VGA_gen:gen1|Equal1~0          ; 1       ;
-; blink[2]~12                    ; 1       ;
-; writey~30                      ; 1       ;
 ; writey~29                      ; 1       ;
 ; writey~27                      ; 1       ;
 ; writey~24                      ; 1       ;
@@ -2053,7 +2065,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_gen:gen1|xCount~0          ; 1       ;
 ; VGA_gen:gen1|Equal0~1          ; 1       ;
 ; VGA_gen:gen1|Equal0~0          ; 1       ;
-; writex~30                      ; 1       ;
 ; writex~29                      ; 1       ;
 ; writex~27                      ; 1       ;
 ; writex~26                      ; 1       ;
@@ -2064,11 +2075,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; always2~12                     ; 1       ;
 ; always2~11                     ; 1       ;
 ; LessThan4~2                    ; 1       ;
-; always2~9                      ; 1       ;
+; always2~8                      ; 1       ;
 ; LessThan6~2                    ; 1       ;
 ; LessThan6~1                    ; 1       ;
 ; writex~21                      ; 1       ;
-; always2~1                      ; 1       ;
 ; LessThan5~1                    ; 1       ;
 ; LessThan5~0                    ; 1       ;
 ; writex~20                      ; 1       ;
@@ -2086,7 +2096,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; previous_keycode[5]            ; 1       ;
 ; previous_keycode[6]            ; 1       ;
 ; previous_keycode[7]            ; 1       ;
-; resetram~0                     ; 1       ;
+; always2~0                      ; 1       ;
 ; sram_addr~19                   ; 1       ;
 ; sram_addr~18                   ; 1       ;
 ; sram_addr~17                   ; 1       ;
@@ -2115,13 +2125,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_gen:gen1|p_hSync~2         ; 1       ;
 ; VGA_gen:gen1|p_hSync~1         ; 1       ;
 ; VGA_gen:gen1|p_hSync~0         ; 1       ;
-; VGA_B~6                        ; 1       ;
+; VGA_B~2                        ; 1       ;
+; VGA_B~0                        ; 1       ;
+; VGA_G~5                        ; 1       ;
+; VGA_G~3                        ; 1       ;
+; VGA_R~4                        ; 1       ;
+; VGA_R~2                        ; 1       ;
 ; VGA_G~1                        ; 1       ;
-; VGA_R~1                        ; 1       ;
-; VGA_B~3                        ; 1       ;
 ; WideOr0~1                      ; 1       ;
 ; WideOr0~0                      ; 1       ;
-; VGA_B~2                        ; 1       ;
+; VGA_G~0                        ; 1       ;
 ; always3~11                     ; 1       ;
 ; always3~10                     ; 1       ;
 ; always3~9                      ; 1       ;
@@ -2134,7 +2147,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; always3~2                      ; 1       ;
 ; always3~1                      ; 1       ;
 ; always3~0                      ; 1       ;
-; VGA_B~0                        ; 1       ;
+; VGA_R~0                        ; 1       ;
 ; clk_reduce:reduce1|VGA_clk     ; 1       ;
 ; keyboard:kbIn|rxtimeout[15]~46 ; 1       ;
 ; keyboard:kbIn|rxtimeout[14]~45 ; 1       ;
@@ -2234,17 +2247,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter[1]                     ; 1       ;
 ; counter[2]                     ; 1       ;
 ; counter[3]                     ; 1       ;
-; blink[5]~24                    ; 1       ;
-; blink[4]~23                    ; 1       ;
+; blink[5]~23                    ; 1       ;
 ; blink[4]~22                    ; 1       ;
-; blink[3]~20                    ; 1       ;
+; blink[4]~21                    ; 1       ;
 ; blink[3]~19                    ; 1       ;
-; blink[2]~18                    ; 1       ;
+; blink[3]~18                    ; 1       ;
 ; blink[2]~17                    ; 1       ;
-; blink[1]~16                    ; 1       ;
+; blink[2]~16                    ; 1       ;
 ; blink[1]~15                    ; 1       ;
-; blink[0]~14                    ; 1       ;
+; blink[1]~14                    ; 1       ;
 ; blink[0]~13                    ; 1       ;
+; blink[0]~12                    ; 1       ;
 ; writey[9]~19                   ; 1       ;
 ; VGA_gen:gen1|Add0~18           ; 1       ;
 ; Add1~17                        ; 1       ;
@@ -2347,171 +2360,164 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 662 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 65 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 308 / 209,544 ( < 1 % ) ;
-; Direct links          ; 152 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 690 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 70 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 450 / 209,544 ( < 1 % ) ;
+; Direct links          ; 137 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )         ;
-; Local interconnects   ; 280 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 45 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 454 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 275 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 59 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 488 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.19) ; Number of LABs  (Total = 31) ;
+; Number of Logic Elements  (Average = 12.60) ; Number of LABs  (Total = 35) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 2                            ;
 ; 8                                           ; 1                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 3                            ;
-; 13                                          ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
 ; 14                                          ; 1                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 19                           ;
+; 15                                          ; 0                            ;
+; 16                                          ; 23                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.48) ; Number of LABs  (Total = 31) ;
+; LAB-wide Signals  (Average = 2.37) ; Number of LABs  (Total = 35) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 25                           ;
+; 1 Async. clear                     ; 27                           ;
 ; 1 Clock                            ; 23                           ;
-; 1 Clock enable                     ; 14                           ;
+; 1 Clock enable                     ; 13                           ;
 ; 1 Sync. clear                      ; 3                            ;
 ; 1 Sync. load                       ; 8                            ;
-; 2 Clock enables                    ; 2                            ;
-; 2 Clocks                           ; 2                            ;
+; 2 Clock enables                    ; 5                            ;
+; 2 Clocks                           ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 19.55) ; Number of LABs  (Total = 31) ;
+; Number of Signals Sourced  (Average = 17.34) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 3                            ;
 ; 8                                            ; 1                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 3                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 2                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
+; 19                                           ; 4                            ;
+; 20                                           ; 5                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 2                            ;
 ; 25                                           ; 0                            ;
 ; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 0                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 1                            ;
 ; 30                                           ; 0                            ;
-; 31                                           ; 1                            ;
-; 32                                           ; 4                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.52) ; Number of LABs  (Total = 31) ;
+; Number of Signals Sourced Out  (Average = 8.57) ; Number of LABs  (Total = 35) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
+; 1                                               ; 4                            ;
 ; 2                                               ; 2                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 3                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 0                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 5                            ;
+; 5                                               ; 4                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 1                            ;
+; 8                                               ; 1                            ;
 ; 9                                               ; 0                            ;
-; 10                                              ; 2                            ;
-; 11                                              ; 5                            ;
-; 12                                              ; 1                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 2                            ;
 ; 13                                              ; 2                            ;
-; 14                                              ; 1                            ;
-; 15                                              ; 2                            ;
+; 14                                              ; 4                            ;
+; 15                                              ; 1                            ;
 ; 16                                              ; 2                            ;
 ; 17                                              ; 1                            ;
-; 18                                              ; 0                            ;
-; 19                                              ; 0                            ;
-; 20                                              ; 0                            ;
-; 21                                              ; 0                            ;
-; 22                                              ; 0                            ;
-; 23                                              ; 0                            ;
-; 24                                              ; 0                            ;
-; 25                                              ; 0                            ;
-; 26                                              ; 1                            ;
+; 18                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 18.13) ; Number of LABs  (Total = 31) ;
+; Number of Distinct Inputs  (Average = 17.00) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 1                            ;
-; 4                                            ; 1                            ;
+; 4                                            ; 3                            ;
 ; 5                                            ; 2                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 2                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 1                            ;
 ; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
+; 18                                           ; 1                            ;
 ; 19                                           ; 1                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 3                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 1                            ;
 ; 25                                           ; 2                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 1                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 0                            ;
+; 28                                           ; 2                            ;
+; 29                                           ; 1                            ;
 ; 30                                           ; 1                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 2                            ;
-; 33                                           ; 1                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2675,10 +2681,111 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
++----------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                        ;
++-----------------+--------------------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s)           ; Delay Added in ns ;
++-----------------+--------------------------------+-------------------+
+; master_clk      ; clk_reduce:reduce1|VGA_clk     ; 8.8               ;
+; master_clk      ; clk_reduce:reduce1|VGA_clk,I/O ; 1.0               ;
++-----------------+--------------------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
+
+
++-------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                     ;
++------------------------+----------------------+-------------------+
+; Source Register        ; Destination Register ; Delay Added in ns ;
++------------------------+----------------------+-------------------+
+; writeB[0]              ; backgroundB[0]       ; 1.769             ;
+; writeG[0]              ; backgroundG[0]       ; 1.769             ;
+; writeR[0]              ; backgroundR[0]       ; 1.195             ;
+; keycode[7]             ; counter[30]          ; 1.104             ;
+; keycode[5]             ; counter[30]          ; 0.989             ;
+; keycode[4]             ; counter[30]          ; 0.935             ;
+; keycode[3]             ; resetram             ; 0.922             ;
+; keycode[2]             ; resetram             ; 0.818             ;
+; keycode[0]             ; resetram             ; 0.818             ;
+; keycode[6]             ; resetram             ; 0.818             ;
+; keycode[1]             ; resetram             ; 0.818             ;
+; writex[3]              ; resetram             ; 0.391             ;
+; writex[5]              ; resetram             ; 0.391             ;
+; writey[6]              ; resetram             ; 0.391             ;
+; writex[9]              ; resetram             ; 0.391             ;
+; writey[4]              ; resetram             ; 0.391             ;
+; writey[3]              ; resetram             ; 0.391             ;
+; writey[2]              ; resetram             ; 0.391             ;
+; writey[1]              ; resetram             ; 0.391             ;
+; writey[5]              ; resetram             ; 0.391             ;
+; writex[7]              ; resetram             ; 0.391             ;
+; writey[0]              ; resetram             ; 0.391             ;
+; writey[7]              ; resetram             ; 0.391             ;
+; writey[8]              ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[7] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[6] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[5] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[4] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[3] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[2] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[8] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[0] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[1] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[8] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[9] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[6] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[5] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[4] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[3] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[7] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[1] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[0] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|xCount[2] ; resetram             ; 0.391             ;
+; VGA_gen:gen1|yCount[9] ; resetram             ; 0.391             ;
+; write_wait             ; resetram             ; 0.391             ;
+; writey[9]              ; resetram             ; 0.391             ;
+; writex[4]              ; resetram             ; 0.391             ;
+; writex[2]              ; resetram             ; 0.391             ;
+; writex[6]              ; resetram             ; 0.391             ;
+; writex[1]              ; resetram             ; 0.391             ;
+; writex[8]              ; resetram             ; 0.391             ;
+; writex[0]              ; resetram             ; 0.391             ;
+; counter[30]            ; counter[30]          ; 0.095             ;
+; counter[29]            ; counter[30]          ; 0.095             ;
+; counter[28]            ; counter[30]          ; 0.095             ;
+; counter[27]            ; counter[30]          ; 0.095             ;
+; counter[26]            ; counter[30]          ; 0.095             ;
+; counter[25]            ; counter[30]          ; 0.095             ;
+; counter[24]            ; counter[30]          ; 0.095             ;
+; counter[23]            ; counter[30]          ; 0.095             ;
+; counter[22]            ; counter[30]          ; 0.095             ;
+; counter[21]            ; counter[30]          ; 0.095             ;
+; counter[20]            ; counter[30]          ; 0.095             ;
+; counter[19]            ; counter[30]          ; 0.095             ;
+; counter[18]            ; counter[30]          ; 0.095             ;
+; counter[17]            ; counter[30]          ; 0.095             ;
+; counter[16]            ; counter[30]          ; 0.095             ;
+; counter[15]            ; counter[30]          ; 0.095             ;
+; counter[14]            ; counter[30]          ; 0.095             ;
+; counter[13]            ; counter[30]          ; 0.095             ;
+; counter[12]            ; counter[30]          ; 0.095             ;
+; counter[11]            ; counter[30]          ; 0.095             ;
+; counter[10]            ; counter[30]          ; 0.095             ;
+; counter[9]             ; counter[30]          ; 0.095             ;
+; counter[8]             ; counter[30]          ; 0.095             ;
+; counter[7]             ; counter[30]          ; 0.095             ;
+; counter[6]             ; counter[30]          ; 0.095             ;
+; counter[5]             ; counter[30]          ; 0.095             ;
+; counter[4]             ; counter[30]          ; 0.095             ;
+; counter[31]            ; counter[30]          ; 0.095             ;
++------------------------+----------------------+-------------------+
+Note: This table only shows the top 80 path(s) that have the largest delay added for hold.
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (119006): Selected device EP4CE115F29C7 for design "projidea1"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2728,26 +2835,26 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X23_Y12 to location X33_Y23
+    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X34_Y37 to location X45_Y48
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.37 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file M:/ece287/projidea1/output_files/projidea1.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 934 megabytes
-    Info: Processing ended: Thu Dec 15 11:07:52 2016
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:19
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 1447 megabytes
+    Info: Processing ended: Fri Dec 16 09:32:46 2016
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +----------------------------+

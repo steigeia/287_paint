@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Dec 15 11:07:49 2016
+Fitter Status : Successful - Fri Dec 16 09:32:43 2016
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Web Edition
 Revision Name : projidea1
 Top-level Entity Name : projidea1
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 440 / 114,480 ( < 1 % )
-    Total combinational functions : 431 / 114,480 ( < 1 % )
+Total logic elements : 441 / 114,480 ( < 1 % )
+    Total combinational functions : 432 / 114,480 ( < 1 % )
     Dedicated logic registers : 166 / 114,480 ( < 1 % )
 Total registers : 166
 Total pins : 60 / 529 ( 11 % )

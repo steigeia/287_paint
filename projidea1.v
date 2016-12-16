@@ -12,7 +12,7 @@ module projidea1(master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSy
 	inout wire [2:0]sram_data;
 	output reg [19:0] sram_addr;
 	wire [9:0] xCount; //x pixel of vga
-	wire [9:0] yCount; //y pixel og vga
+	wire [9:0] yCount; //y pixel of vga
 	wire displayArea; //not currently used
 	wire dirx,diry;
 	reg [4:0] direction;
@@ -215,7 +215,7 @@ module projidea1(master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSy
 			end
 			else if(writex == xCount && writey == yCount)
 			begin
-				blink <= blink + 1;
+				blink <= blink + 1;//blink goes from 0 to 63 then back to 0
 			end
 		end
 	end
@@ -239,46 +239,37 @@ module projidea1(master_clk, KB_clk, data, DAC_clk, VGA_R, VGA_G, VGA_B, VGA_hSy
 		end
 		else
 		begin
+		Rout=writeR;
+		Gout=writeG;
+		Bout=writeB;
 			if((writex == xCount && writey == yCount))
 			begin
 				sram_addr = {writex,writey};
 				sram_we = 0;
-				if(blink > 10 || direction != 0)
+				if(blink > 10 || direction != 0)//when blinking is greater than 10 or need to move cursor set color to cursor color
 				begin
-					Rout=writeR;
-					Gout=writeG;
-					Bout=writeB;
 					VGA_R = {8{sram_data[0]}};
 					VGA_G = {8{sram_data[1]}};
 					VGA_B = {8{sram_data[2]}};
 				end
-				else
+				else //blink an alternate color
 					if(writeR==backgroundR&&writeG==backgroundG&&writeB==backgroundB)
 					begin
-						Rout=!backgroundR;
-						Gout=!backgroundG;
-						Bout=!backgroundB;
 						VGA_R = 127;
 						VGA_G = 127;
 						VGA_B = 127;
 					end
 					else
 					begin
-						Rout=backgroundR;
-						Gout=backgroundG;
-						Bout=backgroundB;
-						VGA_R = {8{sram_data[0]}};
-						VGA_G = {8{sram_data[1]}};
-						VGA_B = {8{sram_data[2]}};
+						VGA_R = {8{backgroundR}};
+						VGA_G = {8{backgroundG}};
+						VGA_B = {8{backgroundB}};
 					end
 			end
 			else
 			begin
 				sram_addr = {xCount,yCount};
 				sram_we = 1;
-				Rout=writeR;
-				Gout=writeG;
-				Bout=writeB;
 				VGA_R = {8{sram_data[0]}};
 				VGA_G = {8{sram_data[1]}};
 				VGA_B = {8{sram_data[2]}};

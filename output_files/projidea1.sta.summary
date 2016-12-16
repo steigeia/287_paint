@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk_reduce:reduce1|VGA_clk'
-Slack : -5.808
-TNS   : -451.391
+Slack : -5.430
+TNS   : -455.280
 
 Type  : Slow 1200mV 85C Model Setup 'master_clk'
-Slack : -2.479
-TNS   : -89.962
+Slack : -2.688
+TNS   : -100.868
 
 Type  : Slow 1200mV 85C Model Hold 'master_clk'
-Slack : 0.389
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_reduce:reduce1|VGA_clk'
-Slack : 0.406
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'master_clk'
@@ -27,19 +27,19 @@ Slack : -1.285
 TNS   : -132.355
 
 Type  : Slow 1200mV 0C Model Setup 'clk_reduce:reduce1|VGA_clk'
-Slack : -5.184
-TNS   : -401.903
+Slack : -4.902
+TNS   : -407.385
 
 Type  : Slow 1200mV 0C Model Setup 'master_clk'
-Slack : -2.193
-TNS   : -76.631
+Slack : -2.363
+TNS   : -86.143
 
 Type  : Slow 1200mV 0C Model Hold 'master_clk'
-Slack : 0.341
+Slack : 0.338
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_reduce:reduce1|VGA_clk'
-Slack : 0.356
+Slack : 0.355
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'master_clk'
@@ -51,24 +51,24 @@ Slack : -1.285
 TNS   : -132.355
 
 Type  : Fast 1200mV 0C Model Setup 'clk_reduce:reduce1|VGA_clk'
-Slack : -2.297
-TNS   : -169.100
+Slack : -2.221
+TNS   : -172.480
 
 Type  : Fast 1200mV 0C Model Setup 'master_clk'
-Slack : -0.641
-TNS   : -16.255
+Slack : -0.827
+TNS   : -21.007
 
 Type  : Fast 1200mV 0C Model Hold 'master_clk'
-Slack : 0.175
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_reduce:reduce1|VGA_clk'
-Slack : 0.185
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'master_clk'
 Slack : -3.000
-TNS   : -69.928
+TNS   : -69.945
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_reduce:reduce1|VGA_clk'
 Slack : -1.000
